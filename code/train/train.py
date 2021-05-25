@@ -4,7 +4,10 @@ from azureml.core.authentication import ServicePrincipalAuthentication
 from azureml.core.authentication import AzureCliAuthentication
 import os
 
-ws = Workspace.from_config()
+from azureml.core import Run
+run = Run.get_context()
+ws = run.experiment.workspace
+
     
 published_pipeline = PipelineEndpoint.get(workspace=ws, name="aml-run-val")
 print(published_pipeline)
