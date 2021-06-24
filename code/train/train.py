@@ -9,11 +9,11 @@ run = Run.get_context()
 ws = run.experiment.workspace
 
     
-published_pipeline = PipelineEndpoint.get(workspace=ws, name="aml-run-val")
+published_pipeline = PipelineEndpoint.get(workspace=ws, name="aml-run-regression")
 print(published_pipeline)
 
 print("submitting pipeline aml-run-val")
-pipeline_run = published_pipeline.submit("aml-run-val")
+pipeline_run = published_pipeline.submit("github-val-yueyue")
 print("pipeline aml-run-val run completed")
 
 
